@@ -1,0 +1,25 @@
+<header class="bg-white">
+    <nav class="flex justify-between items-center w-[92%] mx-auto py-3">
+      <div>
+        <h1 class="text-4xl font-bold">USER</h1>
+      </div>
+      <div
+        class="md:static duration-300 md:min-h-fit absolute bg-white min-h-[30vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5"
+        [ngClass]="{'top-[-100%] ': !isClicked, 'top-[8%]': isClicked}" 
+      >
+      </div>
+      <div class="flex items-center gap-6">
+        <button
+          class="bg-[#a6c1ee] text-white px-5 py-2 rounded-full hover:bg-[#87aece]"
+          (click)="logout()"
+        >
+          Log Out
+        </button>
+        <i class="bi bi-list text-3xl cursor-pointer md:hidden" 
+        [ngClass]="{'bi-list': !isClicked, 'bi-x': isClicked}" 
+        (click)="toggle()">
+     </i>
+      </div>
+    </nav>
+</header>
+<router-outlet></router-outlet>
