@@ -1,0 +1,66 @@
+<div class="bg-gray-100">
+  <h2 class="text-center pt-2">Add Team</h2>
+  <div>
+    <form
+      class="flex flex-col gap-3 text-sm p-3"
+      [formGroup]="teamForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <label
+        [style.color]="isSubmitted && formControls['name'].errors ? 'red' : ''"
+        class="mt-3 text-gray-400 text-sm"
+        >{{
+          isSubmitted && formControls["name"].errors?.hasOwnProperty("required")
+            ? "Name required"
+            : "Team name"
+        }}</label
+      >
+      <input
+        type="text"
+        formControlName="name"
+        class="rounded-xl p-2 border-1 border-gray-500"
+      />
+
+      <label
+        [style.color]="
+          isSubmitted && formControls['captain'].errors ? 'red' : ''
+        "
+        class="mt-1 text-gray-400 text-sm"
+        >{{
+          isSubmitted &&
+          formControls["captain"].errors?.hasOwnProperty("required")
+            ? "Captain required"
+            : "Captain"
+        }}</label
+      >
+      <input type="text" formControlName="captain" class="rounded-xl p-2 border-1 border-gray-500"/>
+
+      <label
+        [style.color]="isSubmitted && formControls['coach'].errors ? 'red' : ''"
+        class="mt-1 text-gray-400 text-sm"
+        >{{
+          isSubmitted &&
+          formControls["coach"].errors?.hasOwnProperty("required")
+            ? "Coach required"
+            : "Coach"
+        }}</label
+      >
+      <input type="text" formControlName="coach" class="rounded-xl p-2 border-1 border-gray-500" />
+      <div class="flex justify-end gap-3">
+        <button
+        type="button"
+          class="bg-red-600 text-white rounded-xl py-2 px-3 mt-3 hover:scale-105 duration-300"
+          (click)="close()"
+        >
+          Cancel
+        </button>
+        <button
+        type="submit"
+          class="bg-green-600 text-white rounded-xl py-2 px-3 mt-3 hover:scale-105 duration-300"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
