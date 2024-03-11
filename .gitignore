@@ -1,0 +1,9 @@
+server/node_modules
+server/.env
+
+client/node_modules
+client/npm-debug.log
+client/yarn-error.log
+client/.angular/cache/
+
+
