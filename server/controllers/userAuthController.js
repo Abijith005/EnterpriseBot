@@ -18,7 +18,8 @@ export const userRegister = async (req, res) => {
         .status(400)
         .json({ success: false, message: "Input validation failed" });
     }
-    const user=await userModel.find({email:email})
+    const user=await userModel.findOne({email:email})
+    console.log(email,user);
     if (user) {
       return res.status(409).json({ success:false,message: 'User with this email already exists' });
     }

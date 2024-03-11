@@ -65,7 +65,7 @@ export class SignUpComponent implements OnInit, OnDestroy {
           duration: 2000,
           detail: res.message,
         });
-        this._router.navigate(['../signIn']);
+        this._router.navigate(['../']);
       });
   }
 
